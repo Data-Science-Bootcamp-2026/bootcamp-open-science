@@ -1,14 +1,17 @@
 ---
-title: "GitHub Copilot"
+title: "Repo structure"
 ---
 
 <div style="height: 2em;"></div>
 
 
-## Coding agents
+## README.md
 
 
-## 
+## LICENSE
+
+
+## Revised repo structure
 
 
 

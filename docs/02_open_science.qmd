@@ -5,11 +5,11 @@ title: "Open science"
 <div style="height: 2em;"></div>
 
 
+## Principles
+
+
+
 ## Research repositories
-
-
-
-## 
 
 
 

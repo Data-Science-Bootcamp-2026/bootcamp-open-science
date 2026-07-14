@@ -6,7 +6,7 @@ project:
     - 01_foss.qmd
     - 02_open_science.qmd
     - 03_git.qmd
-    - 04_github_copilot.qmd
+    - 04_repo_structure.qmd
     - 05_markup.qmd
     - 06_quarto.qmd
     - 07_renv.qmd
@@ -27,7 +27,7 @@ book:
     - 01_foss.qmd
     - 02_open_science.qmd
     - 03_git.qmd
-    - 04_github_copilot.qmd
+    - 04_repo_structure.qmd
     - 05_markup.qmd
     - 06_quarto.qmd
     - 07_renv.qmd

@@ -35,6 +35,8 @@ title: "Version control"
 
 ## Tips
 
+### Zenodo
+
 
 
 ::: {.content-visible when-format="html"}
