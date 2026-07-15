@@ -1,6 +1,6 @@
 ---
 title: "DATA SCIENCE BOOTCAMP 2026"
-subtitle: "PART 1: R"
+subtitle: "PART 2: OPEN SCIENCE"
 author:
   - name: Martin Ho
     email: martinkh.ho@mail.utoronto.ca
@@ -25,8 +25,8 @@ format:
     controls-auto: false
     controls-layout: edges
     link-external-newwindow: true
-    footer: "Data Science Bootcamp 2026 · Part 1: R"
-    logo: assets/images/r_logo.png
+    footer: "Data Science Bootcamp 2026 · Part 2: Open Science"
+    logo: assets/images/git_logo.png
 ---
 
 
@@ -34,676 +34,441 @@ format:
 
 By the end of this session, you should be able to:
 
-- Explain why code improves **reproducibility**
-- Navigate **RStudio** and organize work with an **R project**
-- Distinguish types, classes, and data structures
-- Read and write basic R code using conditions, loops, and functions
+- Explain how open science supports transparent and reproducible research
+- Describe the role of FOSS, Git, GitHub, and a well-structured repository
+- Write simple Markdown and understand how Quarto combines prose, code, and output
+- Use `renv` to record an R project's package environment
 
 
 ## Declaration of AI-assisted technologies
 
-All instructional material in this presentation was written by the author. OpenAI Codex (GPT-5.6-Sol, reasoning: extra high) helped proofread and format the slide deck. The author reviewed, edited, and verified the suggestions as needed and takes full responsibility for the final product.
+All instructional material in this presentation was written by the author. OpenAI Codex (GPT-5.6-Terra, reasoning: high) helped format the slide deck. The author reviewed, edited, and verified the suggestions as needed and takes full responsibility for the final product.
 
 
-## Why write code?
+## Why open science?
 
 ::: {.columns}
-::: {.column width="48%"}
-### Manual workflow
-
-- Mistakes are easy to miss
-- Repeating work costs time
-- Steps may be undocumented
-- Workflow is hard to reproduce
+::: {.column width="50%"}
+- Research should be discoverable, inspectable, and reusable
+- Sharing code and materials enables validation, replication, and reuse
+- Clear workflows make study decisions easier to understand and review
 :::
 
-::: {.column width="48%"}
-### Scripted workflow
-
-- Rules are reusable and reviewable
-- Changes can be rerun consistently
-- Every transformation is recorded
-- Workflow is easier to reproduce
+::: {.column width="44%"}
+![Potential threats to the scientific method [@munafo2017manifesto]](assets/images/nature-s415620160021-fig-001.png){fig-alt="Diagram of threats to the scientific method" width="100%"}
 :::
 :::
 
 ::: {.key-point}
-Code turns analyses from a sequence of clicks into an **auditable recipe**.
-:::
-
-::: {.notes}
-- Think of how you would perform analyses on Excel
-- Typos, missingness, duplicates, formatting errors
-- Merge, filter, create/remove/transform columns
+Open science is not just about making outputs public—it is about making research **usable and trustworthy**.
 :::
 
 
-## Why R?
+## Open science concepts
 
-::: {.columns}
-::: {.column width="66%"}
-- Free and open source
-- Designed for statistics and data analysis
-- Strong data processing and visualization
-- Interactive: create, inspect, and transform objects
-- Extended by packages maintained by a global community
+::: {.compact}
+
+| Principle | Focus |
+|---|---|
+| **FAIR** [@wilkinson2016fair] | Research outputs are findable, accessible, interoperable, and reusable. |
+| **Transparency** | Study decisions, definitions, and methods can be understood. |
+| **Reproducibility** | The workflow can be run, checked, and updated. |
+
 :::
-
-::: {.column width="28%"}
-![](assets/images/r_logo.png){fig-alt="R logo" width="78%"}
-:::
-:::
-
-::: {.notes}
-- A programming language + an interactive environment
-- Very popular in biostatistics + epidemiology
-- Everything in R is an object
-- Objects are stored in memory → can run and tweak as you go
-:::
-
-
-## Two software philosophies [@kenneth2023sas]
-
-+---------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| SAS                                                                 | R                                                                                                                         |
-+=====================================================================+===========================================================================================================================+
-| Proprietary and paid                                                | Open source and free                                                                                                      |
-+---------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| Centralized validation, documentation, and support by vendor        | Decentralized community-developed ecosystem of packages (validation, quality, and support may vary)                       |
-+---------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| Standardized procedures                                             | Flexible and extensible                                                                                                   |
-+---------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| Mature regulated workflows                                          | Increasing adoption in regulated workflows                                                                                |
-+---------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-
-::: {.columns}
-::: {.column width="28%"}
-![](assets/images/sas_logo.png){fig-alt="SAS logo" width="50%"}
-:::
-
-::: {.column width="66%"}
-SAS historically dominates regulatory drug submissions and pharmacoepidemiology.
-:::
-:::
-
-::: {.notes}
-- **Python:** gaining popularity for ML (but is designed as general-purpose + PyPI generally less strict than CRAN)
-  - *FYI Python philosophy: "There should be one — and preferably only one — obvious way to do it."*
-- **LLM support:** code + documentation
-:::
-
-
-## The regulatory ecosystem is moving
-
-- Pharmaverse coordinates open-source tools for clinical reporting [@eugenio2023pharmaverse]
-- Novo Nordisk completed an R-based new drug application in 2021 [@appsilonteam2024why]
-- FDA expanded accepted R-related file formats in 2025 after industry–FDA collaboration [@rconsortium2025expanded; @rconsortium2026submissions]
-
-::: {.key-point}
-The transition requires **training, infrastructure, governance, and reproducible validation evidence**.
-:::
-
-::: {.notes}
-- **Pharmaverse** (2020) regulatory-compliant R packages: instead of duplicated silos → standardized workflows
-- **Pharmacoepidemiology:** similar motivations, e.g., ICES infrastructure + macros
-- Shift will take time
-:::
-
-
-## R is interactive
 
 ::: {.columns}
 ::: {.column width="48%"}
-The **console** evaluates expressions immediately:
+### Make research easier to find and use
 
-```{r}
-#| echo: true
-#| output-location: fragment
-#| code-line-numbers: "|1|1-2|1-3|1-4"
-x <- 1
-y <- 2
-z <- x + y
-z
+- Metadata and documentation
+- Clear licensing
+- Persistent repositories
+:::
+
+::: {.column width="48%"}
+### Make research easier to verify
+
+- Protocols and reporting checklists
+- Data, code, and supporting materials
+- Versioned computational environments
+:::
+:::
+
+
+## Free and open source software (FOSS)
+
+::: {.columns}
+::: {.column width="48%"}
+### Free software [@gnuproject2026what]
+
+Focuses on the user's freedoms to run, study, modify, and distribute software.
+:::
+
+::: {.column width="48%"}
+### Open source software [@opensourceinitiative2007open]
+
+Focuses on the practical benefits of an open development model: collaboration, quality, security, and innovation.
+:::
+:::
+
+::: {.key-point}
+FOSS combines these perspectives: source code is available under a license that permits use, study, modification, and sharing.
+:::
+
+
+## FOSS creates both opportunity and dependency
+
+::: {.columns}
+::: {.column width="47%"}
+![Critical dependencies [@xkcddependency]](assets/images/dependency.png){fig-alt="Cartoon illustrating software dependency chains" height="400px" fig-align="center"}
+:::
+
+::: {.column width="47%"}
+- FOSS is maintained by communities, organizations, and volunteers
+- Widely used tools can become critical infrastructure
+- A neglected or compromised dependency can affect many downstream projects
+- Licenses determine how software can be reused and distributed
+:::
+:::
+
+
+## Open science across the research lifecycle
+
+<br>
+
+![Open science principles throughout the research process [@centerforopensciencewhat]](assets/images/lifecycle-practices.png){fig-alt="Open science practices across the research lifecycle" width="90%" fig-align="center"}
+
+
+## GitHub is for active work; repositories preserve snapshots
+
+::: {.columns}
+::: {.column width="48%"}
+### GitHub
+
+- Hosts Git repositories for version control and collaboration
+- Supports issues, pull requests, and code review
+- Best suited to active project development
+:::
+
+::: {.column width="48%"}
+### OSF and Zenodo
+
+- Preserve long-term project snapshots
+- Assign persistent DOIs to releases
+- Support citation and discovery of research outputs
+:::
+:::
+
+::: {.columns}
+::: {.column width="48%"}
+![](assets/images/osf_logo.png){fig-alt="Open Science Framework logo" width="55%"}
+:::
+
+::: {.column width="48%"}
+![](assets/images/zenodo_logo.png){fig-alt="Zenodo logo" width="55%"}
+:::
+:::
+
+
+## Code editing: text files make change visible
+
+::: {.columns}
+::: {.column width="48%"}
+### Text files
+
+- Code: `.R`, `.py`
+- Markup: `.md`, `.qmd`, `.html`
+- Configuration: `.yaml`, `.json`
+- Git can show line-by-line changes
+:::
+
+::: {.column width="48%"}
+### Binary files
+
+- Images, PDFs, and executables
+- Require specific software to view
+- Git can track changes, but cannot easily show their contents
+:::
+:::
+
+::: {.key-point}
+Plain-text source files are portable, reviewable, and well suited to version control.
+:::
+
+
+## VS Code and RStudio serve different priorities
+
+::: {.columns}
+::: {.column width="48%"}
+### VS Code
+
+- Broad extension ecosystem
+- Strong Git and GitHub integration
+- Supports many languages and coding assistants
+:::
+
+::: {.column width="48%"}
+### RStudio
+
+- Polished interactive R workflow
+- Console and Environment panes for exploration
+- Familiar project-oriented interface
+:::
+:::
+
+Both can edit scripts, run code, use terminals, and work with Git. Choose the environment that fits the task and your team.
+
+
+## Git records a project's history
+
+::: {.columns}
+::: {.column width="50%"}
+Git is a distributed version-control system. Each contributor has a local copy of the repository and its history.
+
+1. **Stage** the changes for a snapshot
+2. **Commit** the snapshot with a meaningful message
+3. **Push** commits to a shared remote repository
+:::
+
+::: {.column width="44%"}
+```text
+script.R
+script_draft1.R
+script_final.R
 ```
 
-::: {.fragment}
-**Scripts** preserve the sequence of commands so the analysis can be rerun, reviewed, and changed.
+This becomes one file with a traceable history of commits.
 :::
+:::
+
+::: {.key-point}
+Git turns a collection of files into an auditable record of decisions and changes.
+:::
+
+
+## GitHub: remote, local, branches, and forks
+
+::: {.columns}
+::: {.column width="48%"}
+![Remote and local repositories [@weberpals2025lets]](assets/images/remote_local.png){fig-alt="Diagram showing local and remote repositories" width="88%"}
 :::
 
 ::: {.column width="48%"}
-::: {.fragment}
-![](assets/images/r_console.png){fig-alt="Base R console" width="88%"}
-:::
+- A **remote** repository is hosted on GitHub; each collaborator has a **local** copy
+- A **branch** isolates a proposed change from the default branch
+- A **pull request** proposes merging a branch after review
+- A **fork** is your own copy of a repository when you do not have write access
 :::
 :::
 
 ::: {.notes}
-- The basic R app is not pretty!
-- A number of quality of life improvements when using RStudio
+- The practical GitHub setup and click-by-click workflow are intentionally omitted from this lecture deck.
 :::
 
 
-## Why RStudio?
-
-RStudio is an integrated development environment for R [@positrstudio].
-
-<div class="rstudio-pane-cycle">
-  <img class="fragment fade-out" data-fragment-index="1" src="assets/images/rstudio_gui.png" alt="RStudio interface showing its four panes">
-  <img class="fragment fade-in-then-out" data-fragment-index="1" src="assets/images/rstudio_console.png" alt="RStudio console pane">
-  <img class="fragment fade-in-then-out" data-fragment-index="2" src="assets/images/rstudio_editor.png" alt="RStudio editor pane">
-  <img class="fragment fade-in-then-out" data-fragment-index="3" src="assets/images/rstudio_env.png" alt="RStudio Environment and History pane">
-  <img class="fragment" data-fragment-index="4" src="assets/images/rstudio_other.png" alt="RStudio Files, Plots, Packages, Help, and Viewer pane">
-</div>
-
-::: {.notes}
-- **Console:** write ad hoc commands (work is lost when R session ends)
-- **Editor:** write reusable scripts (work to be saved)
-- **Environment:** inspect objects in memory
-- **Other:** browse files, view plots, manage packages, view help, and more
-:::
-
-
-## R projects give your repositories a home
+## Coding assistants can support development
 
 ::: {.columns}
-::: {.column width="55%"}
-An `.Rproj` file:
-
-- Establishes an initial project working directory
-- Encourages portable relative paths
-- Stores project-specific IDE settings
-- Has its own history (`.Rhistory`)
+::: {.column width="48%"}
+- Explain unfamiliar code
+- Summarize files and changes
+- Translate code across languages
+- Draft tests and documentation
 :::
 
-::: {.column .project-tree-column width="40%"}
+::: {.column width="48%"}
+- Suggest implementations and refactors
+- Help review pull requests
+- Identify opportunities for optimization
+- Assist with README files and project documentation
+:::
+:::
+
+::: {.key-point}
+Treat generated suggestions as drafts: review them, test them, and remain responsible for the final work [@weberpals2025lets].
+:::
+
+
+## A good repository structure separates concerns
+
+::: {.columns}
+::: {.column width="45%"}
 ```text
 .
-├── data/
 ├── analysis/
-├── output/
+├── data/
 ├── docs/
-└── project.Rproj
+├── output/
+├── src/
+├── .gitignore
+├── LICENSE
+└── README.md
 ```
+:::
+
+::: {.column width="50%"}
+- Keep code, data, documentation, and outputs clearly separated
+- Use relative paths so the project works on another computer
+- Keep generated or sensitive files out of Git
+- Make the entry points and project purpose easy to find
+:::
+:::
+
+
+## `.gitignore`, README, and LICENSE
+
+::: {.columns}
+::: {.column width="32%"}
+### `.gitignore`
+
+Excludes generated or sensitive files from future commits. It does not untrack files already committed.
+:::
+
+::: {.column width="32%"}
+### `README.md`
+
+Explains the project's purpose, how to get started, how to get help, and who maintains it.
+:::
+
+::: {.column width="32%"}
+### `LICENSE`
+
+States the permissions others receive to use, modify, and redistribute the project.
 :::
 :::
 
 ::: {.key-point}
-Relative paths like `./folder/file.csv` are much preferred over user-specific absolute paths like `/Users/your-name/Desktop/folder/file.csv`.
-:::
-
-::: {.notes}
-- Absolute paths are sensitive to OS, username, and wherever they decide to save the repository → irreproducible
-- Also integrates with Git and `renv` but we will discuss these in Part 2
+Making a repository public without a license does **not** grant others permission to reuse it.
 :::
 
 
-## Packages extend R
+## Markup makes plain text publishable
 
-- Packages bundle code, documentation, and sometimes data
-- Base R comes with packages already
-- But base R may not be most efficient, flexible, or readable
-- Install custom packages maintained by global community from CRAN [@rcoreteam2026writing; @crancontributed].
+Markdown uses simple symbols to describe structure and formatting [@xie2026markdown].
+
+::: {.compact}
+
+| What you want | Markdown |
+|---|---|
+| Heading | `# Main heading` |
+| Bold / italics | `**bold**`, `*italics*` |
+| List | `- Item` or `1. Item` |
+| Link | `[Text](https://example.com)` |
+| Image | `![Caption](image.png)` |
+| Inline code | `` `code` `` |
+
+:::
+
+::: {.key-point}
+Markdown is easy to edit, share, render, and track with Git.
+:::
+
+
+## Quarto combines narrative, code, and results
+
+Literate programming interweaves human-readable documentation with source code and output [@knuth1984literate].
 
 ::: {.columns}
 ::: {.column width="48%"}
-### Install once
+### YAML metadata
 
-```r
-install.packages("readr")
+```yaml
+---
+title: "My study"
+format: html
+toc: true
+---
 ```
 :::
 
 ::: {.column width="48%"}
-### Load each session
+### Executable code
 
 ```r
 library(readr)
-
-# Or call one function
-readr::read_csv("data.csv")
+df <- read_csv("data.csv")
 ```
 :::
 :::
-
-::: {.notes}
-- External packages are not always better:
-  - Learning curve
-  - Dependencies
-  - May be slower
-  - May require permissions
-  - Textbooks may only use base R
-:::
-
-
-## The Tidyverse
-
-::: {.columns}
-::: {.column width="68%"}
-A very popular collection of packages that share common data representations and design conventions:
-
-- `readr` — import data
-- `dplyr` — transform data
-- `tidyr` — reshape data
-- `ggplot2` — visualize data
-
-`library(tidyverse)` loads the core packages [@wickhamdata].
-:::
-
-::: {.column width="26%"}
-![](assets/images/tidyverse_logo.png){fig-alt="Tidyverse logo" width="92%"}
-:::
-:::
-
-::: {.notes}
-- Can be more efficient and readable than base R
-- R4DS
-:::
-
-
-## Core operators
-
-::: {.columns}
-::: {.column width="52%"}
-+----------------+---------------------------------------------+
-| Purpose        | Operators                                   |
-+================+=============================================+
-| Assignment     | `<-`                                        |
-+----------------+---------------------------------------------+
-| Arithmetic     | `+`, `-`, `*`, `/`, `^`, `sqrt()`, `log()`  |
-+----------------+---------------------------------------------+
-| Relational     | `>`, `>=`, `<`, `<=`, `==`, `!=`\           |
-|                | `%in%`                                      |
-+----------------+---------------------------------------------+
-| Logical        | `&`, `|`, `!`                               |
-+----------------+---------------------------------------------+
-:::
-
-::: {.column width="43%"}
-```{r}
-#| echo: true
-#| output-location: fragment
-x <- 1
-x + 2
-```
-
-```{r}
-#| echo: true
-#| output-location: fragment
-x > 2
-```
-
-```{r}
-#| echo: true
-#| output-location: fragment
-x %in% c(1, 2, 3)
-```
-
-```{r}
-#| echo: true
-#| output-location: fragment
-x > 0 & x < 2
-```
-:::
-:::
-
-Object names may contain letters, digits, periods, and underscores. Use *snake_case* (e.g., `my_variable_name`) [@wickhamdata]. Names cannot start with a digit or underscore, nor a period followed by a digit [@ethzurichquotes].
-
-::: {.notes}
-- What is `x`? It is 1, not 3! Unless you assign it, such as `x <- x + 2`, it will not save.
-:::
-
-
-## Encode decisions with conditions
-
-```{r}
-#| echo: true
-#| output-location: fragment
-#| code-line-numbers: "|1|1-4|1-6|1-9"
-cases <- 75
-
-if (cases > 100) {
-  print("Emergency")
-} else if (cases > 50) {
-  print("Warning")
-} else {
-  print("Caution")
-}
-```
-
-<br>
 
 ::: {.key-point}
-Conditions make analytical decisions explicit and reviewable.
-:::
-
-::: {.notes}
-- The second expression is only evaluated if the first is false, therefore to have reached the second expression, cases must be <= 100.
-- Can be a single `if`
-- Can have no `else if`
-- Can have multiple `else if`
-- Can have no `else`
+One Quarto document can render to HTML, PDF, Word, slides, and other formats.
 :::
 
 
-## Repeat decisions with loops
+## Quarto supports transparent reporting
 
 ::: {.columns}
 ::: {.column width="48%"}
-```{r}
-#| echo: true
-#| output-location: fragment
-cases <- c(25, 75, 125)
-
-for (x in cases) {
-  if (x > 100) {
-    print("Emergency")
-  } else if (x > 50) {
-    print("Warning")
-  } else {
-    print("Caution")
-  }
-}
-```
+- Documents can include code, figures, tables, equations, and references
+- Code can be shown, hidden, or folded depending on the audience
+- R, Python, Julia, and other languages can be used in the same publishing system
 :::
 
 ::: {.column width="48%"}
-```{r}
-#| echo: true
-#| output-location: fragment
-cases <- 125
+$$
+Y = \beta_0 + \beta_1 X_1 + \dots + \beta_p X_p
+$$
 
-while (cases >= 0) {
-  if (cases > 100) {
-    print("Emergency")
-  } else if (cases > 50) {
-    print("Warning")
-  } else {
-    print("Caution")
-  }
-  cases <- cases - 25
-}
+```text
+project/
+├── analysis.qmd
+├── data/
+└── output/
 ```
 :::
 :::
-
-- `for` loops iterate over a sequence
-- `while` loops continue while a condition remains true.
-
-
-## Objects and function calls
-
-> To understand computations in R, two slogans are helpful:
->
-> - Everything that exists is an object.
-> - Everything that happens is a function call.
-
-— John M. Chambers [@chambers2014objectoriented]
-
-::: {.notes}
-- Numbers, text, functions, and even packages are all objects
-- Objects are manipulated by function calls (assignment, arithmetic, etc. - and custom functions)
-:::
-
-
-## Type, class, and structure
-
-+----------------+----------------------+-----------------------------------------------------+
-| Concept        | Question             | Examples                                            |
-+================+======================+=====================================================+
-| **Type**       | How is it stored?    | double, integer, logical, character, list           |
-+----------------+----------------------+-----------------------------------------------------+
-| **Class**      | How does it behave?  | numeric, date, logical, character, list, data frame |
-+----------------+----------------------+-----------------------------------------------------+
-| **Structure**  | How is it organized? | vector, matrix, array, list, data frame             |
-+----------------+----------------------+-----------------------------------------------------+
-
-<br>
-
-::: {.columns}
-::: {.column width="48%"}
-```{r}
-#| echo: true
-#| output-location: fragment
-typeof(1)
-```
-
-```{r}
-#| echo: true
-#| output-location: fragment
-typeof(as.character(1))
-```
-:::
-
-::: {.column width="48%"}
-```{r}
-#| echo: true
-#| output-location: fragment
-typeof(as.Date("2026-07-15"))
-```
-
-```{r}
-#| echo: true
-#| output-location: fragment
-class(as.Date("2026-07-15"))
-```
-:::
-:::
-
-
-## Common R data structures
-
-![Data structures in R [@grolemundhandson]](assets/images/r_datastructures.png){fig-alt="Diagram of common R data structures" width="48%"}
-
-
-## Vectors, lists, and data frames
-
-::: {.columns}
-::: {.column width="32%"}
-### Vector
-
-One atomic type:
-
-```{r}
-#| echo: true
-#| output-location: fragment
-my_vector <- c("1", "2", "3")
-my_vector
-```
-
-```{r}
-#| echo: true
-#| output-location: fragment
-my_vector[2]
-```
-
-```{r}
-#| echo: true
-#| output-location: fragment
-my_vector <- 0:6
-my_vector
-```
-:::
-
-::: {.column width="32%"}
-::: {.fragment}
-### List
-
-Arbitrary objects:
-
-```{r}
-#| echo: true
-#| output-location: fragment
-my_list <- list("A", c(1, 2))
-my_list
-```
-
-```{r}
-#| echo: true
-#| output-location: fragment
-my_list[2]
-```
-
-```{r}
-#| echo: true
-#| output-location: fragment
-my_list[[2]]
-```
-:::
-:::
-
-::: {.column width="32%"}
-::: {.fragment}
-### Data frame
-
-Named list of equal-length vectors:
-
-```{r}
-#| echo: true
-#| output-location: fragment
-my_df <- data.frame(
-  year = c(2020, 2021),
-  cases = c(25, 125)
-)
-my_df
-```
-
-```{r}
-#| echo: true
-#| output-location: fragment
-my_df[,2]
-```
-
-```{r}
-#| echo: true
-#| output-location: fragment
-my_df$cases
-```
-:::
-:::
-:::
-
-::: {.notes}
-- **Data frame:** each column is a vector that can in turn be indexed
-:::
-
-
-## Functions make work reusable
-
-```{r}
-#| echo: true
-#| output-location: fragment
-classify_cases <- function(cases) {
-  response <- if (cases > 100) {
-    "Emergency"
-  } else if (cases > 50) {
-    "Warning"
-  } else {
-    "Caution"
-  }
-  return(response)
-}
-
-classify_cases(75)
-```
 
 ::: {.key-point}
-Functions turn a sequence of commands into a reusable tool.
-:::
-
-::: {.notes}
-- Functions return values, but can also have intentional side effects (e.g., printing to console, plotting a graph, writing to file)
+Quarto makes it easier to keep the explanation, analysis, and rendered output aligned.
 :::
 
 
+## `renv` records R package environments
 
-## From files to findings[@wickhamdata]
+::: {.columns}
+::: {.column width="48%"}
+### When starting a project
 
-```{mermaid}
-flowchart LR
-  A[Read data] --> B[Clean]
-  B --> C
-  subgraph analysis[" "]
-    direction LR
-    C[Transform] --> D[Explore]
-    D --> E[Model]
-    E --> C
-  end
-  analysis --> F[Communicate]
-  style analysis fill:#eeeeee,stroke:none
+```r
+renv::init()
 ```
 
-<hr class="slide-divider">
-
-::: {.fragment}
-Common file types include `.csv`, `.xlsx`, `sas7bdat`, `.rds`, and `.RData`.
-
-::: {.file-type-icons}
-::: {.file-type-icon}
-![](assets/images/csv_icon.png){fig-alt="CSV file icon"}
-:::
-::: {.file-type-icon}
-![](assets/images/excel_icon.png){fig-alt="Microsoft Excel logo"}
-:::
-::: {.file-type-icon}
-![](assets/images/sas_logo.png){fig-alt="SAS logo"}
-:::
-::: {.file-type-icon}
-![](assets/images/r_logo.png){fig-alt="R logo"}
-:::
-:::
+Creates a project library and `renv.lock`, which records package versions.
 :::
 
-::: {.notes}
-- Data scientists spend most of their time on data wrangling - not modeling
-- Cleaning: typos, missingness, duplicates, formatting
-- Transforming: merge, filter, create/remove/transform columns
+::: {.column width="48%"}
+### When sharing a project
+
+```r
+renv::snapshot()
+renv::restore()
+```
+
+Records the current environment and recreates it on another machine.
 :::
-
-
-## R for ICES projects
-
-- ICES is the institution that stores administrative health data in Ontario, Canada
-- It has well-established SAS infrastructure and macros
-- R is supported but you need to apply for access to the Analytic Grid Pilot program
-
-::: {.notes}
-- R on RAE is incredibly outdated
-- AGP has relatively limited RAM though
 :::
-
-
-## Reproducibility habits
-
-- Keep raw data separate from processed data
-- Use relative paths
-- Load only the packages that you need
-- Record R and package versions
-- Never rely on an old `.RData` workspace to reconstruct an analysis
 
 ::: {.key-point}
-A reproducible workflow records **data, code, versions, and decisions**.
+Commit `renv.lock` and the activation files; usually ignore the project package library itself [@usheyintroduction].
 :::
 
 
 ## Key takeaways
 
-1. R makes data workflows explicit, reusable, and inspectable.
-2. RStudio and R projects organize the work around your scripts.
-3. Packages extend R—but introduce dependencies that require control.
-4. Objects have types, classes, and structures.
-5. Conditions, loops, and functions turn decisions into reusable code.
+1. Open science makes research outputs more discoverable, inspectable, and reusable.
+2. FOSS enables collaboration but introduces dependencies and licensing responsibilities.
+3. Git and GitHub provide version history, review, and collaboration around text-based projects.
+4. Markdown and Quarto turn plain text, code, and results into reproducible documents.
+5. `renv` records package versions so an R project can be recreated more reliably.
 
 
 ## Further readings
 
-- R for Data Science (2e) [@wickhamdata]
-- Hands-On Programming with R [@grolemundhandson]
-- Object-Oriented Programming, Functional Programming and R [@chambers2014objectoriented]
-
-::: {.notes}
-- See book for more details, such as updating packages
-:::
+- Open Source Guides [@github2026open]
+- HARPER template [@wang2023harmonized]
+- Reproducible analytic workflows [@weberpals2024fairification]
+- R markdown (applying the principles to Quarto) [@xie2026markdown]
 
 
 ## References {#refs}
@@ -720,7 +485,6 @@ window.addEventListener("load", function () {
     const references = slide.querySelector(":scope > .references");
     if (!references) return;
 
-    // Start at the CSS size, then reduce only the bibliography if needed.
     references.style.fontSize = "";
     const maximum = parseFloat(window.getComputedStyle(references).fontSize);
     const minimum = 10;
