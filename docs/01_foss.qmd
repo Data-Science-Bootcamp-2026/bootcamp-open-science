@@ -17,7 +17,7 @@ Open source software is one aspect of open science [@centerforopensciencewhat]. 
 	3. Freedom to distribute copies
 	4. Freedom to distribute modified versions
 
-- **The open source definition** focuses on the practical benefits of an open development model (e.g., quality, security, innovation) [@opensourceinitiative2007open]:
+- **The open source definition** focuses on the practical benefits of an open development model (e.g., collaboration, quality, security, innovation) [@opensourceinitiative2007open]:
 	- Its criteria overlap substantially with the free software definition.
 	- However, while free software often rejects licenses that impose additional restrictions, open source software can be less stringent by allowing a broader range of licenses (free software is a subset of open source software, though the difference is minimal).
 	- The benefits come from having many eyes on the same project; thousands of developers worldwide contribute ideas (bug reports, bug fixes, optimization, new use cases) with speed and expertise. Linus's law asserts that "given enough eyeballs, all bugs are shallow."

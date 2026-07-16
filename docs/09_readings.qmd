@@ -1,9 +1,9 @@
 ---
 nocite: |
     @github2026open
+    @positrstudioa
     @wang2023harmonized
     @weberpals2024fairification
-    @xie2026markdown
 ---
 
 # [Readings]{.content-visible unless-format="pdf"}[References]{.content-visible when-format="pdf"} {#readings}
