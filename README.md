@@ -15,7 +15,7 @@
 
 **WORKSHOP PART 1:**
 
-1. Go to the [book]
+1. Go to the [book](https://data-science-bootcamp-2026.github.io/bootcamp-open-science/)
 2. At the top left, click the GitHub icon (the cat)
 3. Near the top right of the GitHub page, click **Fork**
 4. Click the green **Create fork** button
