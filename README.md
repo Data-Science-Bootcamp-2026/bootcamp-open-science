@@ -145,7 +145,8 @@ Now let's stage, commit, and push the changes.
 19. Click the green **Create pull request** button
 20. GitHub will check for merge conflicts
 21. Because this is your repo, it is your responsibility to look over the pull request and approve it
-    - Click **Merge branch**
+    - Click the green **Merge pull request** button
+    - Click the green **Confirm merge** button
     - Click **Delete branch**
 22. Go back to VS Code, switch to the `main` branch, and pull the updates
     - If there's no button to do so, manually pull changes by hovering your pointer over the the **CHANGES** row and click its `...` symbol, then **Pull**
