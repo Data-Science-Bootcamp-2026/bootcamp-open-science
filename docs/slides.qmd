@@ -95,11 +95,9 @@ All instructional material in this presentation was written by the author. OpenA
 :::
 
 
-## Open science across the research lifecycle
+## Open science across the research lifecycle {.nostretch}
 
-<br>
-
-![Open science principles throughout the research process [@centerforopensciencewhat]](assets/images/lifecycle-practices.png){fig-alt="Open science practices across the research lifecycle" fig-align="center"}
+![Open science principles throughout the research process [@centerforopensciencewhat]](assets/images/lifecycle-practices.png){fig-alt="Open science practices across the research lifecycle" width="70%" fig-align="center"}
 
 ::: {.key-point}
 Open science encourges you to share all data, code, and materials, but there are situations where you cannot (e.g., protected health information).

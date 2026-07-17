@@ -60,7 +60,7 @@ And in terms of reproducibility, there are many potential threats to scientific 
 
 Something as simple as badges [@kidwell2016badges] can encourage data sharing and thus transparency and reproducibility. The International Society for Pharmacoepidemiology (ISPE) now encourages the display of Open Science Badges on publications and conference presentations [@wang2024building; @blohowiak2013badges].
 
-![Open science badges](assets/images/open_science_badges.jpg)
+![Open science badges](assets/images/open_science_badges.jpg){width=200px}
 
 Tazare *et al.* [@tazare2024sharing] reviewed all studies published in the *Pharmacoepidemiology and Drug Safety (PDS)* journal between 2017 and 2022 to see how frequently code was shared. They found that code sharing was low, but increased from 1.8% in 2017 to 9.5% in 2022. 
 
