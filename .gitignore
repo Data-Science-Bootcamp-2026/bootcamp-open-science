@@ -53,3 +53,10 @@ rsconnect/
 docs/.quarto/
 docs/_book/
 docs/slides.pdf
+
+# Exercise
+*.Rproj
+test.qmd
+renv.lock
+.Rprofile
+renv/

@@ -154,3 +154,184 @@
   break-inside: avoid;
   margin-bottom: 0.8em;
 }
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}
+
+.reveal .branch-animation {
+  height: 270px;
+  margin: 0.3em auto;
+  max-width: 1000px;
+  position: relative;
+}
+
+.reveal .branch-node {
+  border: 3px solid var(--bootcamp-navy);
+  border-radius: 0.35em;
+  box-sizing: border-box;
+  font-size: 0.65em;
+  font-weight: 750;
+  line-height: 1.2;
+  min-width: 190px;
+  padding: 0.65em 0.85em;
+  position: absolute;
+  text-align: center;
+  transform: translateX(-50%);
+}
+
+.reveal .branch-node span {
+  display: block;
+  font-size: 0.6em;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.25em;
+  text-transform: uppercase;
+}
+
+.reveal .branch-node.remote {
+  background: var(--bootcamp-navy);
+  color: white;
+}
+
+.reveal .branch-node.local {
+  background: var(--bootcamp-pale);
+  color: var(--bootcamp-navy);
+}
+
+.reveal .at-main-remote,
+.reveal .at-main-local,
+.reveal .at-main-link {
+  left: 30%;
+}
+
+.reveal .at-feature-remote,
+.reveal .at-feature-local,
+.reveal .at-feature-link {
+  left: 72%;
+}
+
+.reveal .at-main-remote,
+.reveal .at-feature-remote {
+  top: 4%;
+}
+
+.reveal .at-main-local,
+.reveal .at-feature-local {
+  top: 65%;
+}
+
+.reveal .branch-link {
+  color: var(--bootcamp-blue);
+  font-size: 0.48em;
+  font-weight: 750;
+  position: absolute;
+}
+
+.reveal .branch-link span {
+  background: #fffdf7;
+  padding: 0 0.35em;
+  position: absolute;
+  white-space: nowrap;
+}
+
+.reveal .branch-reset.visible ~ .branch-addition {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+.reveal .branch-link.down,
+.reveal .branch-link.up {
+  background: var(--bootcamp-blue);
+  height: 52px;
+  top: 39%;
+  width: 4px;
+}
+
+.reveal .branch-link.down::after,
+.reveal .branch-link.up::after {
+  background: var(--bootcamp-blue);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  content: "";
+  height: 12px;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 16px;
+}
+
+.reveal .branch-link.down::after {
+  bottom: -8px;
+}
+
+.reveal .branch-link.down span {
+  left: 0.55em;
+  top: 35%;
+}
+
+.reveal .branch-link.up::after {
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  top: -8px;
+}
+
+.reveal .branch-link.up span {
+  bottom: 35%;
+  left: 0.55em;
+}
+
+.reveal .branch-link.right {
+  background: var(--bootcamp-blue);
+  height: 4px;
+  left: 41%;
+  top: 79%;
+  width: 20%;
+}
+
+.reveal .branch-link.left {
+  background: var(--bootcamp-blue);
+  height: 4px;
+  left: 42%;
+  top: 17%;
+  width: 16%;
+}
+
+.reveal .branch-link.right::after {
+  background: var(--bootcamp-blue);
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+  content: "";
+  height: 16px;
+  position: absolute;
+  right: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+}
+
+.reveal .branch-link.left::after {
+  background: var(--bootcamp-blue);
+  clip-path: polygon(100% 0, 0 50%, 100% 100%);
+  content: "";
+  height: 16px;
+  left: -8px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+}
+
+.reveal .branch-link.right span {
+  left: 50%;
+  top: 0.8em;
+  transform: translateX(-50%);
+}
+
+.reveal .branch-link.left span {
+  left: 50%;
+  text-align: center;
+  top: 0.8em;
+  transform: translateX(-50%);
+}

@@ -7,7 +7,7 @@ title: "Quarto"
 
 ## Literate programming
 
-Literate programming is a programming paradigm introduced by Donald Knuth in 1984 [@knuth1984literate], in which source code is interwoven with human-readable documentation. In other words: `literate programming = documentation + source code + output/results` in a single document, without having to switch between the manuscript and separate scripts [@weberpals2025lets].
+**Literate programming** is a programming paradigm introduced by Donald Knuth in 1984 [@knuth1984literate], in which source code is interwoven with human-readable documentation. In other words: `literate programming = documentation + source code + output/results` in a single document, without having to switch between the manuscript and separate scripts [@weberpals2025lets].
 
 For R users, this approach became widely accessible through R Markdown, which combines:
 
@@ -16,8 +16,8 @@ For R users, this approach became widely accessible through R Markdown, which co
 
 R Markdown can be used to make documents, reports, books, slides, websites, etc. (i.e., it is a 'single-source' publishing system). One limitation of R Markdown was that `knitr` tied it to the R ecosystem. **Quarto**, released by Posit in 2022, is an open source technical publishing system that extends R markdown:
 
-- It unifies the publishing framework across multiple programming languages -- even proprietary ones like SAS and STATA with some additional setup [@weberpals2025lets]
-- It works with most IDEs, including RStudio, VS Code, JupyterLab, etc. [@weberpals2025lets] In fact, in the workshop we will use the Quarto that is bundled with RStudio installation.
+- It unifies the publishing framework across multiple programming languages -- even proprietary ones like SAS and Stata with some additional setup [@weberpals2025lets]
+- It works with most IDEs, including RStudio, VS Code, JupyterLab, etc. [@weberpals2025lets] In fact, in the workshop we will use the Quarto that is bundled with RStudio installation [@positrstudioa].
 
 
 ## Quarto
@@ -129,7 +129,7 @@ You can add various reporting elements, including numbered figures, tables, flow
 
 ## For researchers
 
-With Quarto, you can do an entire study from end to end in one system. In fact, some journals have published their [Quarto templates](https://quarto.org/docs/manuscripts/components.html). Here is [an example](https://mine-cetinkaya-rundel.github.io/indo-rct/) of a study that rendered their manuscript using Quarto (be patient; it will take a bit of time to render). In this example, they rendered as HTML, but Quarto can render to various output types.
+With Quarto, you can do an entire study from end to end in one system. In fact, some journals have published their [Quarto templates](https://quarto.org/docs/manuscripts/components.html). Here is [an example](https://mine-cetinkaya-rundel.github.io/indo-rct/) of a study that rendered their manuscript using Quarto (if it asks you to sign in, click **Cancel** and it will work). In this example, they rendered as HTML, but Quarto can render to various output types.
 
 
 ::: {.content-visible when-format="html"}

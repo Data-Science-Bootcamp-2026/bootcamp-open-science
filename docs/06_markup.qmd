@@ -7,7 +7,7 @@ title: "Markup"
 
 ## Types of markup
 
-**Markup** is plain text with simple symbols that describe how the text should be structured or displayed—for example, as a heading, list, link, or table. Software can read those symbols and turn the text into a formatted document.
+**Markup** is plain text with syntax that describes how the text should be structured or displayed —- for example, as a heading, list, link, or table. Software can read those symbols and turn the text into a formatted document.
 
 +----------+-------------------------------------------------------------------------+
 | Type     | Example                                                                 |
@@ -23,7 +23,7 @@ title: "Markup"
 
 ## Markdown
 
-Markdown is especially common because it is simple and lightweight. It is used by GitHub, Quarto, Jupyter notebooks, and many other tools. A Markdown file is simply a text file, so it is easy to edit, share, and track with Git.
+Markdown is especially common because it is simple and lightweight. It is used by GitHub, Quarto, Jupyter notebooks, and many other tools. A Markdown file is simply a text file, so it is easy to read (even before rendering), edit, share, and track with Git.
 
 Common Markdown syntax includes [@xie2026markdown]:
 

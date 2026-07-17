@@ -99,7 +99,7 @@ Now, clone the repo:
 ## Working
 
 17. Create a branch by clicking the **main** on the bottom left of VS Code
-18. A dropdown menu will appear from the search bar; click **+ Create a new branch** (this will use your current branch, `main`, as the template) and give it a name
+18. A dropdown menu will appear from the search bar; click **+ Create a new branch** (this will use your current branch, `main`, as the template) and give your new branch a name
 19. Notice the branch name on the bottom left has changed; in fact, if you wanted, you can switch between branches by clicking that branch name and selecting different branches
 20. Do what you normally do, creating files and folders in RStudio, VS Code, and/or File Explorer (Windows) or Finder (macOS)
 21. Amend the `README`, `LICENSE`, and `.gitignore` as needed -- more about these in the [next chapter](05_repo_structure.qmd)
@@ -134,7 +134,7 @@ Now `origin/main` is up to date, but `main` is behind. To sync:
 
 32. On VS Code, switch back to `main`
 33. Go to the **Source Control** tab on the sidebar
-34. Give VS Code some time as it should automatically fetch changes from the remote repo, then you can click the blue **↓ Sync changes** button
+34. Give VS Code some time as it should automatically fetch changes from the remote repo, then you can click the blue **Sync changes ↓** button
     - If there is no blue button, you may need to manually refresh by hovering your pointer over the the **CHANGES** row and click its refresh symbol
     - If it does not appear, you may need to manually pull changes by hovering your pointer over the the **CHANGES** row and click its `...` symbol, then **Pull**
 
@@ -158,36 +158,36 @@ Generally, start with a private repo and only make public when finalized. Note t
 
 If you are working with your own repo (or a collaborator's repo), then all the above works well because you have write access. This is called the **shared repository model**.
 
-By contrast, if you do not have write access, you would need to first **fork** a copy to your own GitHub profile before cloning. Although you do not have write access to their repo, you *do* have rights to your fork; you can push changes to your fork without modifying the original repo. Then if you have a suggestion for the original owner, you can open a pull request to the original "upstream" repo from your fork. This is called the **fork and pull model** and is how open source software development happens.
+By contrast, if you do not have write access, you would need to first **fork** a copy to your own GitHub account before cloning. Although you do not have write access to their repo, you *do* have rights to your fork; you can push changes to your fork without modifying the original repo. Then if you have a suggestion for the original owner, you can open a pull request to the original "upstream" repo from your fork. This is called the **fork and pull model** and is how open source software development happens.
 
 To fork, click the **Fork** button on the top right of a repo's GitHub page. You will be asked which branch to copy; in most cases, you only need the `main` branch.
 
 
 ## Glossary [@opensauced2025what]
 
-+------------+------------------------------------------------------------------------------------------+
-| Term       | Definition                                                                               |
-+============+==========================================================================================+
-| Branch     | A parallel version of the repository where you can test changes in isolation from `main` |
-+------------+------------------------------------------------------------------------------------------+
-| Clone      | A local copy of a repository, including its files and Git history.                       |
-+------------+------------------------------------------------------------------------------------------+
-| Contributor | Anyone who helps a project -- developers, designers, testers, etc.                      |
-+------------+------------------------------------------------------------------------------------------+
-| Fork       | A copy of someone else's repository under your own GitHub account; you can change it     |
-|            | without affecting the original repository                                                |
-+------------+------------------------------------------------------------------------------------------+
-| Issue      | A GitHub discussion item used to track a bug, question, feature request, etc.            |
-+------------+------------------------------------------------------------------------------------------+
-| Maintainer | A person or group responsible for a project. Maintainers review pull requests and make   |
-|            | decisions about the project                                                              |
-+------------+------------------------------------------------------------------------------------------+
-| Merge      | To combine changes from one branch into another, often after a pull request is approved  |
-+------------+------------------------------------------------------------------------------------------+
-| PR         | Pull request: a proposal to merge changes from one branch or fork into another branch    |
-+------------+------------------------------------------------------------------------------------------+
-| Repository | A project folder that Git tracks, including its files and history (local or remote)      |
-+------------+------------------------------------------------------------------------------------------+
++-------------+------------------------------------------------------------------------------------------+
+| Term        | Definition                                                                               |
++=============+==========================================================================================+
+| Branch      | A parallel version of the repository where you can test changes in isolation from `main` |
++-------------+------------------------------------------------------------------------------------------+
+| Clone       | A local copy of a repository, including its files and Git history.                       |
++-------------+------------------------------------------------------------------------------------------+
+| Contributor | Anyone who helps a project -- developers, designers, testers, etc.                       |
++-------------+------------------------------------------------------------------------------------------+
+| Fork        | A copy of someone else's repository under your own GitHub account; you can change it     |
+|             | without affecting the original repository                                                |
++-------------+------------------------------------------------------------------------------------------+
+| Issue       | A GitHub discussion item used to track a bug, question, feature request, etc.            |
++-------------+------------------------------------------------------------------------------------------+
+| Maintainer  | A person or group responsible for a project. Maintainers review pull requests and make   |
+|             | decisions about the project                                                              |
++-------------+------------------------------------------------------------------------------------------+
+| Merge       | To combine changes from one branch into another, often after a pull request is approved  |
++-------------+------------------------------------------------------------------------------------------+
+| PR          | Pull request: a proposal to merge changes from one branch or fork into another branch    |
++-------------+------------------------------------------------------------------------------------------+
+| Repository  | A project folder that Git tracks, including its files and history (local or remote)      |
++-------------+------------------------------------------------------------------------------------------+
 
 
 ## GitHub Copilot

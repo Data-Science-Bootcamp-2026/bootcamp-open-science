@@ -15,7 +15,7 @@ This creates a project-specific library `./renv/library` and a `renv.lock` file 
 
 When you are ready to share your work (and the means to reproduce your environment), here are the functions you will need:
 
-- `renv::status()` is a visual check to see which packages you installed to this repo and used (or did not use)
+- `renv::status()` reports any inconsistencies between `renv.lock`, the project library, and dependencies
 - `renv::clean()` uninstalls any unused packages in this repo
 - `renv::snapshot()` writes the latest package versions and metadata to `renv.lock`
 - `renv::restore()` as a final check -- it should say that you are already synchronized with lockfile
