@@ -99,7 +99,11 @@ All instructional material in this presentation was written by the author. OpenA
 
 <br>
 
-![Open science principles throughout the research process [@centerforopensciencewhat]](assets/images/lifecycle-practices.png){fig-alt="Open science practices across the research lifecycle" width="90%" fig-align="center"}
+![Open science principles throughout the research process [@centerforopensciencewhat]](assets/images/lifecycle-practices.png){fig-alt="Open science practices across the research lifecycle" fig-align="center"}
+
+::: {.key-point}
+Open science encourges you to share all data, code, and materials, but there are situations where you cannot (e.g., protected health information).
+:::
 
 ::: {.notes}
 - We will focus only on open data, open code, and open materials.
@@ -123,7 +127,7 @@ Tazare *et al.* 2024 [@tazare2024sharing]:
 :::
 
 ::: {.notes}
-Sharing via the supplement is difficult to discover, not indexed, and does not support complex filing structures [@weberpals2025lets].
+- Sharing via the supplement is difficult to discover, not indexed, and does not support complex filing structures [@weberpals2025lets].
 :::
 
 
@@ -401,6 +405,8 @@ Making changes is a three-step process:
 3. **Push** commits to the remote repository
 
 ::: {.notes}
+- You can stage many times before committing.
+- You can commit many times before pushing.
 - Start with a private repo and only make public when finalized.
 - Making a repo public will publish the entire history -- beware any protected data and credentials.
 - Once data becomes public, it cannot be easily retracted, and someone/machine may have already saved a local copy.
@@ -426,6 +432,11 @@ Making changes is a three-step process:
 
 ::: {.key-point}
 Treat generated suggestions as drafts: review them, test them, and remain responsible for the final work.
+:::
+
+::: {.notes}
+- **GitHub Copilot** is a coding assistant. It can dynamically choose what model to use depending on the task you give it -- simple tasks can be solved by simple models.
+- Other coding assistants include OpenAI Codex and Claude Code.
 :::
 
 

@@ -99,7 +99,7 @@ Now, clone the repo:
 ## Working
 
 17. Create a branch by clicking the **main** on the bottom left of VS Code
-18. A dropdown menu will appear from the search bar; click **+ Create a new branch** (this will use your current branch, `main`, as the template) and give it a name
+18. A dropdown menu will appear from the search bar; click **+ Create a new branch** (this will use your current branch, `main`, as the template) and give your new branch a name
 19. Notice the branch name on the bottom left has changed; in fact, if you wanted, you can switch between branches by clicking that branch name and selecting different branches
 20. Do what you normally do, creating files and folders in RStudio, VS Code, and/or File Explorer (Windows) or Finder (macOS)
 21. Amend the `README`, `LICENSE`, and `.gitignore` as needed -- more about these in the [next chapter](05_repo_structure.qmd)
@@ -134,7 +134,7 @@ Now `origin/main` is up to date, but `main` is behind. To sync:
 
 32. On VS Code, switch back to `main`
 33. Go to the **Source Control** tab on the sidebar
-34. Give VS Code some time as it should automatically fetch changes from the remote repo, then you can click the blue **↓ Sync changes** button
+34. Give VS Code some time as it should automatically fetch changes from the remote repo, then you can click the blue **Sync changes ↓** button
     - If there is no blue button, you may need to manually refresh by hovering your pointer over the the **CHANGES** row and click its refresh symbol
     - If it does not appear, you may need to manually pull changes by hovering your pointer over the the **CHANGES** row and click its `...` symbol, then **Pull**
 
